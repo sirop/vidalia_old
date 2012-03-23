@@ -16,11 +16,16 @@
 #include "RouterListItem.h"
 #include "RouterListWidget.h"
 
+#include "stringutil.h"
+
 #include <QHeaderView>
 
 #define STATUS_COLUMN   (RouterListWidget::StatusColumn)
 #define COUNTRY_COLUMN  (RouterListWidget::CountryColumn)
 #define NAME_COLUMN     (RouterListWidget::NameColumn)
+#define IP_COLUMN       (RouterListWidget::IPnumberColumn)
+#define BW_COLUMN       (RouterListWidget::BandwidthColumn)
+
 
 #define IMG_NODE_OFFLINE    ":/images/icons/node-unresponsive.png"
 #define IMG_NODE_SLEEPING   ":/images/icons/node-hibernating.png"
@@ -87,6 +92,8 @@ RouterListItem::update(const RouterDescriptor &rd)
   /* Make the new information visible */
   setIcon(STATUS_COLUMN, statusIcon);
   setText(NAME_COLUMN, _rd->name());
+  setText(IP_COLUMN, _rd->ip().toString());
+  setText(BW_COLUMN, string_format_bandwidth(_rd->observedBandwidth()));
   setToolTip(NAME_COLUMN, QString(_rd->name() + "\r\n" + _rd->platform()));
 }
 

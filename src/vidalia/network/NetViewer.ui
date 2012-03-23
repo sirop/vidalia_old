@@ -63,7 +63,7 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>175</width>
+         <width>300</width>
          <height>0</height>
         </size>
        </property>
@@ -83,7 +83,7 @@
         <bool>true</bool>
        </property>
        <property name="columnCount">
-        <number>3</number>
+        <number>5</number>
        </property>
        <column>
         <property name="text">
@@ -100,7 +100,17 @@
          <string>Relay</string>
         </property>
        </column>
-      </widget>
+       <column>
+        <property name="text">
+         <string>IP</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Bandwidth</string>
+        </property>
+       </column>
+    </widget>
      </item>
      <item row="0" column="0" rowspan="2">
       <widget class="QFrame" name="frmMap">
