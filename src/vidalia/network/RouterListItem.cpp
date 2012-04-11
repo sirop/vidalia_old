@@ -126,7 +126,7 @@ RouterListItem::setLocation(const GeoIpRecord &geoip)
   _countryCode = geoip.countryCode();
 }
 
-/** Convert IP numbers to quint64 for the comparison operator*/
+/** Convert IP numbers to quint64 for the comparison operator */
 quint64
 RouterListItem::iptoquint64(const RouterListItem *ListItem) const
 {
