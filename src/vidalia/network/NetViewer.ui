@@ -99,6 +99,9 @@
          </widget>
          <widget class="QWidget" name="layoutWidget_2">
           <layout class="QVBoxLayout" name="verticalLayout_7">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetMaximumSize</enum>
+           </property>
            <item>
             <widget class="QLineEdit" name="lineRouterSearch">
              <property name="minimumSize">
@@ -116,52 +119,167 @@
             </widget>
            </item>
            <item>
-            <widget class="RouterListWidget" name="treeRouterList">
+            <widget class="QTabWidget" name="tabRelayWidget">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-               <horstretch>1</horstretch>
-               <verstretch>0</verstretch>
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>2</horstretch>
+               <verstretch>2</verstretch>
               </sizepolicy>
              </property>
-             <property name="minimumSize">
-              <size>
-               <width>175</width>
-               <height>0</height>
-              </size>
+             <property name="focusPolicy">
+              <enum>Qt::StrongFocus</enum>
              </property>
              <property name="contextMenuPolicy">
               <enum>Qt::DefaultContextMenu</enum>
              </property>
-             <property name="statusTip">
-              <string/>
-             </property>
-             <property name="selectionMode">
-              <enum>QAbstractItemView::ExtendedSelection</enum>
-             </property>
-             <property name="indentation">
+             <property name="currentIndex">
               <number>0</number>
              </property>
-             <property name="sortingEnabled">
-              <bool>true</bool>
-             </property>
-             <property name="columnCount">
-              <number>3</number>
-             </property>
-             <column>
-              <property name="text">
-               <string/>
+             <widget class="QWidget" name="RelayWidget">
+              <property name="minimumSize">
+               <size>
+                <width>236</width>
+                <height>239</height>
+               </size>
               </property>
-             </column>
-             <column>
-              <property name="text">
-               <string/>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Relay</string>
-              </property>
-             </column>
+              <attribute name="title">
+               <string>    Relay Panel         </string>
+              </attribute>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <widget class="RouterListWidget" name="treeRouterList">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                   <horstretch>1</horstretch>
+                   <verstretch>1</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="contextMenuPolicy">
+                  <enum>Qt::DefaultContextMenu</enum>
+                 </property>
+                 <property name="statusTip">
+                  <string/>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOn</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOn</enum>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::ExtendedSelection</enum>
+                 </property>
+                 <property name="indentation">
+                  <number>0</number>
+                 </property>
+                 <property name="sortingEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="columnCount">
+                  <number>6</number>
+                 </property>
+                 <attribute name="headerDefaultSectionSize">
+                  <number>75</number>
+                 </attribute>
+                 <attribute name="headerMinimumSectionSize">
+                  <number>10</number>
+                 </attribute>
+                 <attribute name="headerShowSortIndicator" stdset="0">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="headerStretchLastSection">
+                  <bool>false</bool>
+                 </attribute>
+                 <column>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Relay</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>IP</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Bandwidth</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Uptime</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="RelaySettings">
+              <attribute name="title">
+               <string>Add Columns</string>
+              </attribute>
+              <widget class="QCheckBox" name="chkShowIP">
+               <property name="geometry">
+                <rect>
+                 <x>120</x>
+                 <y>30</y>
+                 <width>42</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>IP</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="chkShowBW">
+               <property name="geometry">
+                <rect>
+                 <x>120</x>
+                 <y>80</y>
+                 <width>94</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Bandwidth</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="chkShowUptime">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="geometry">
+                <rect>
+                 <x>120</x>
+                 <y>130</y>
+                 <width>74</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Uptime</string>
+               </property>
+              </widget>
+             </widget>
             </widget>
            </item>
           </layout>
@@ -361,7 +479,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../res/vidalia.qrc">
+    <iconset>
      <normaloff>:/images/32x32/view-refresh.png</normaloff>:/images/32x32/view-refresh.png</iconset>
    </property>
    <property name="text">
@@ -379,7 +497,7 @@
   </action>
   <action name="actionHelp">
    <property name="icon">
-    <iconset resource="../res/vidalia.qrc">
+    <iconset>
      <normaloff>:/images/32x32/system-help.png</normaloff>:/images/32x32/system-help.png</iconset>
    </property>
    <property name="text">
@@ -397,7 +515,7 @@
   </action>
   <action name="actionClose">
    <property name="icon">
-    <iconset resource="../res/vidalia.qrc">
+    <iconset>
      <normaloff>:/images/32x32/window-close.png</normaloff>:/images/32x32/window-close.png</iconset>
    </property>
    <property name="text">
@@ -415,7 +533,7 @@
   </action>
   <action name="actionZoomIn">
    <property name="icon">
-    <iconset resource="../res/vidalia.qrc">
+    <iconset>
      <normaloff>:/images/32x32/zoom-in.png</normaloff>:/images/32x32/zoom-in.png</iconset>
    </property>
    <property name="text">
@@ -433,7 +551,7 @@
   </action>
   <action name="actionZoomOut">
    <property name="icon">
-    <iconset resource="../res/vidalia.qrc">
+    <iconset>
      <normaloff>:/images/32x32/zoom-out.png</normaloff>:/images/32x32/zoom-out.png</iconset>
    </property>
    <property name="text">
@@ -451,7 +569,7 @@
   </action>
   <action name="actionZoomToFit">
    <property name="icon">
-    <iconset resource="../res/vidalia.qrc">
+    <iconset>
      <normaloff>:/images/32x32/zoom-fit-best.png</normaloff>:/images/32x32/zoom-fit-best.png</iconset>
    </property>
    <property name="text">
@@ -469,7 +587,7 @@
   </action>
   <action name="actionZoomFullScreen">
    <property name="icon">
-    <iconset resource="../res/vidalia.qrc">
+    <iconset>
      <normaloff>:/images/32x32/view-fullscreen.png</normaloff>:/images/32x32/view-fullscreen.png</iconset>
    </property>
    <property name="text">
@@ -503,8 +621,6 @@
    <header>network/CircuitListWidget.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../res/vidalia.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
